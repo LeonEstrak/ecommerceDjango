@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index View</title>
+</head>
+<body>
+    {% if latest_item_list %}
+    <ul>
+    {% for item in latest_item_list %}
+        <li>
+            <a href="#">{{item.item_name}}</a>
+        </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <h1>No items in shop</h1>
+    {% endif %}
+</body>
+</html>

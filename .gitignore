@@ -1,2 +1,4 @@
 ecommerceDjango/__pycache__/*
 .vscode/settings.json
+merchant/__pycache__/*
+merchant/migrations/*
