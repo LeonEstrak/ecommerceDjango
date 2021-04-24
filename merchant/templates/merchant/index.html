@@ -7,6 +7,7 @@
     <title>Index View</title>
 </head>
 <body>
+    <h2>List of All Items</h2>
     {% if latest_item_list %}
     <ul>
     {% for item in latest_item_list %}
@@ -18,5 +19,7 @@
     {% else %}
     <h1>No items in shop</h1>
     {% endif %}
+    <button>    <a href="{% url 'merchant:add'%}" style="height: 2rem;width:2rem;">Add Item</a>
+    </button>
 </body>
 </html>

@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
+from django.urls import reverse_lazy
 from .models import Item
+
+# from .forms import ItemForm6
 
 
 class IndexView(generic.ListView):
@@ -14,3 +17,35 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Item
     template_name = "merchant/itemDetails.html"
+
+
+class CreateItemView(generic.CreateView):
+    template_name = "merchant/addItem.html"
+    model = Item
+    # exclude = ["item_image"]
+    # fields = "__all__"
+    fields = [
+        "item_name",
+        "item_price",
+        "item_can_be_seen",
+        "item_profit_percentage",
+        "item_image",
+    ]
+
+
+class UpdateItemView(generic.UpdateView):
+    template_name = "merchant/addItem.html"
+    model = Item
+    fields = [
+        "item_name",
+        "item_price",
+        "item_can_be_seen",
+        "item_profit_percentage",
+        "item_image",
+    ]
+
+
+class DeleteItemView(generic.DeleteView):
+    template_name = "merchant/deleteItem.html"
+    model = Item
+    success_url = reverse_lazy("merchant:index")
