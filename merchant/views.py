@@ -9,3 +9,8 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Item.objects.order_by("entry_dateTime")
+
+
+class DetailView(generic.DetailView):
+    model = Item
+    template_name = "merchant/itemDetails.html"

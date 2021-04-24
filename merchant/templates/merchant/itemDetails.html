@@ -7,6 +7,10 @@
     <title>Item Details</title>
 </head>
 <body>
-    
+    <h1>Item Name: {{item.item_name}}</h1>
+    <h3>Item Price: {{item.item_price}}</h3>
+    <h3>Can the Customer see this item ? {{item.item_can_be_seen}}</h3>
+    <h3>Profit Percentage on this item: {{item.item_profit_percentage}}</h3>
+    <img src="{{item.item_image.url}}" alt="" style="width: 100%; float: left; margin-right: 10px;">
 </body>
 </html>
