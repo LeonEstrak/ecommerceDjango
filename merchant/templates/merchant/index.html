@@ -5,21 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index View</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
 </head>
-<body>
+<body style="font-size: 150%;">
     <h2>List of All Items</h2>
     {% if latest_item_list %}
     <ul>
     {% for item in latest_item_list %}
-        <li>
-            <a href="{% url 'merchant:detail' item.id %}">{{item.item_name}}</a>
-        </li>
+        <div class="container">
+            <a href="{% url 'merchant:detail' item.id %}" style="display: flex;flex-direction: column;">
+                <img src="{{item.item_image.url}}" alt="">
+                {{item.item_name}}
+            </a>
+        </div>
     {% endfor %}
     </ul>
     {% else %}
     <h1>No items in shop</h1>
     {% endif %}
-    <button>    <a href="{% url 'merchant:add'%}" style="height: 2rem;width:2rem;">Add Item</a>
-    </button>
+    <a href="{% url 'merchant:add'%}" >Add Item</a>
 </body>
 </html>

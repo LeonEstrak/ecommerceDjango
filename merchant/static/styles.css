@@ -1,0 +1,59 @@
+html{
+    box-sizing: border-box;
+    height: 100%;
+    background: linear-gradient(to bottom, #1f1f1f,#303030,#1f1f1f );
+    display: flex;
+    justify-content: center;
+}
+body{
+    padding: 2rem;
+    color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 150%;
+}
+
+a:link, a:visited{
+background-color: #ffffff;
+color: black;
+
+padding: 10px 20px;
+margin: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+
+input{
+background-color: #ffffff;
+color: black;
+font-size: 90%;
+padding: 10px 20px;
+border: none;
+}
+
+input[type=submit]{
+cursor: pointer;
+}
+
+input[type=file]{
+    background: none;
+    color: #ffffff;
+}
+
+.container{
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin:2rem;
+}
+
+img{
+    height: 200px;
+}
+
+h2{
+    text-align: center;
+}

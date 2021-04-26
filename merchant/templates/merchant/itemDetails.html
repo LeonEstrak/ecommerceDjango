@@ -5,18 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
 </head>
 <body>
-    <button><a href="{% url 'merchant:index'%}">Back</a></button>
-    <button><a href="{% url 'merchant:delete' item.id%}">Delete</a></button>
-    <button><a href="{% url 'merchant:update' item.id%}">Edit</a></button>
+    <div style="display: flex; justify-content: space-between; margin:2rem">
+        <a href="{% url 'merchant:index'%}">Back</a>
+        <a href="{% url 'merchant:delete' item.id%}">Delete</a>
+        <a href="{% url 'merchant:update' item.id%}">Edit</a>
+    </div>
 
-    <h1>Item Name: <span style="color:green">{{item.item_name}}</span></h1>
-    <h3>Created On: <span style="color:green">{{item.entry_dateTime}}</span></h3>
-    <h3>Item Price: <span style="color:green">Rs. {{item.item_price}}</span></h3>
-    <h3>Can the Customer see this item ? <span style="color:green">{{item.item_can_be_seen}}</span></h3>
-    <h3>Profit Percentage on this item: <span style="color:green">{{item.item_profit_percentage}}</span></h3>
-    <img src="{{item.item_image.url}}" alt="" style="height: 500px; float: left; ">
+    <img src="{{item.item_image.url}}" alt="" style="height: 500px ">
+    <h1>Item Name: <span style="color:green; font-size: 150%;">{{item.item_name}}</span></h1>
+    <h3>Created On: <span style="color:green; font-size: 150%;">{{item.entry_dateTime}}</span></h3>
+    <h3>Item Price: <span style="color:green; font-size: 150%;">Rs. {{item.item_price}}</span></h3>
+    <h3>Can the Customer see this item ? <span style="color:green; font-size: 150%;">{{item.item_can_be_seen}}</span></h3>
+    <h3>Profit Percentage on this item: <span style="color:green; font-size: 150%;">{{item.item_profit_percentage}} %</span></h3>
+    
 </body>    
 
 </html>
