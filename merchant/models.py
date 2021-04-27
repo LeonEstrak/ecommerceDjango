@@ -14,6 +14,16 @@ class Item(models.Model):
     item_profit_percentage = models.FloatField(
         verbose_name="Profit margin percentage made on the item"
     )
+
+    class typeOfItems(models.TextChoices):
+        grocery = "Grocery"
+        consumables = "Consumables"
+        frozen = "Frozen Food"
+        toys = "Toys"
+        other = "Others"
+
+    item_type = models.CharField(max_length=20,choices=typeOfItems.choices)
+    
     item_image = models.ImageField(upload_to="images/")
 
     def __str__(self):

@@ -3,8 +3,6 @@ from django.views import generic
 from django.urls import reverse_lazy
 from .models import Item
 
-# from .forms import ItemForm6
-
 
 class IndexView(generic.ListView):
     template_name = "merchant/index.html"
@@ -22,12 +20,11 @@ class DetailView(generic.DetailView):
 class CreateItemView(generic.CreateView):
     template_name = "merchant/addItem.html"
     model = Item
-    # exclude = ["item_image"]
-    # fields = "__all__"
     fields = [
         "item_name",
         "item_price",
         "item_can_be_seen",
+        "item_type",
         "item_profit_percentage",
         "item_image",
     ]
@@ -40,6 +37,7 @@ class UpdateItemView(generic.UpdateView):
         "item_name",
         "item_price",
         "item_can_be_seen",
+        "item_type",
         "item_profit_percentage",
         "item_image",
     ]
